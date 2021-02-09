@@ -12,16 +12,13 @@ public class ThreadPrint extends Thread {
 	@Override
 	public void run() {
 		while (true) {
-			long start = System.nanoTime();
-			long threeSec = 3000000000L;
-			boolean ran = false;
-			while (!ran) {
-				long current = System.nanoTime();
-				if (current - start >= threeSec) {
+			try {
+				sleep(3000);
+				if (!c.isEmpty()) {
 					System.out.println(c.getString());
-					c.reset();
-					ran = true;
 				}
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 		}
 	}

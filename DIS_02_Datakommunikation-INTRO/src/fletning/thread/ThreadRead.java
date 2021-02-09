@@ -13,11 +13,9 @@ public class ThreadRead extends Thread {
 
 	@Override
 	public void run() {
-		while (true) {
-			Scanner scan = new Scanner(System.in);
-			while (scan.hasNext()) {
-				c.setString(scan.nextLine());
-			}
+		Scanner scan = new Scanner(System.in);
+		while (scan.hasNext()) {
+			c.setString(scan.nextLine());
 		}
 	}
 }
